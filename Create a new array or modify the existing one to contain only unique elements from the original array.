@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int a[] = {2, 4, 2, 5, 4, 7, 5};
+    int n = 7;
+
+    int unique[100], k = 0;
+
+    for(int i = 0; i < n; i++) {
+        int found = 0;
+
+        for(int j = 0; j < k; j++) {
+            if(a[i] == unique[j]) {
+                found = 1;
+                break;
+            }
+        }
+
+        if(!found) {
+            unique[k] = a[i];
+            k++;
+        }
+    }
+
+    for(int i = 0; i < k; i++)
+        printf("%d ", unique[i]);
+
+    return 0;
+}
